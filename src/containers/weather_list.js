@@ -4,7 +4,7 @@ import Chart from '../components/chart';
 import GoogleMap from '../components/google_map';
 
 class WeatherList extends Component {
-	
+
 
 	//nyt päästään weatheriin käsiksi this.props.weather
 
@@ -20,9 +20,9 @@ class WeatherList extends Component {
 		const pressures = cityData.list.map(weather => weather.main.pressure);
 		const humidities = cityData.list.map(weather => weather.main.humidity);
 		const { lon, lat} = cityData.city.coord;
-		/* ES6 sama kuin alla" 
+		/* ES6 sama kuin alla"
 		const lon = cityData.city.coord.lon;
-		const lat = cityData.city.coord.lat;	
+		const lat = cityData.city.coord.lat;
 		*/
 
 		return (
@@ -61,7 +61,7 @@ class WeatherList extends Component {
 		);
 	}
 }
-
+// halutaan tuoda statesta weather tälle komponentille.
 function mapStateToProps({weather}){
 	//state.weather koska on niin määritelty reducers/index.js
 	return {  weather }; // = return {  weather: weather }

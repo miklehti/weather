@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index';
 
 class SearchBar extends Component {
+	//komponentin state
 	constructor(props){
 		super(props);
 
@@ -35,7 +36,7 @@ class SearchBar extends Component {
 	render() {
 		return (
 			<form onSubmit={this.onFormSubmit} className="input-group">
-				<input 
+				<input
 					placeholder="Get a five day forecast in you favorite cities in US for ex. Sacramento"
 					className="form-control"
 					value={this.state.term}
@@ -51,6 +52,8 @@ class SearchBar extends Component {
 }
 
 //hookataan fetchWeather action creator search baaríin
+//mapDispatchToProps käytetään kun halutaan käytätä action creatoreita tuottamana propsit componentille.
+//mapStateToProps jos halutaan tuoda varastoitua dataa komponentille.
 function mapDispatchToProps(dispatch){
 	return bindActionCreators({ fetchWeather }, dispatch);
 }
